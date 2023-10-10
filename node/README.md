@@ -1,4 +1,4 @@
-###Init
+### Init
 
 First run:
 ```
@@ -22,7 +22,7 @@ Add file named /config.json in this structure:
 ]
 ```
 
-###Run
+### Run
 ```
 node index.js
 ```
