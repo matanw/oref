@@ -50,7 +50,7 @@ def scan(start, lang_out):
 		try:
 			content = get_page(url)
 			print(f" {i} - {url}")
-			result[url] = str(content)
+			result[url] = content.decode('utf-8')
 			nighbours = get_urls(content, lang_out)
 			for n in nighbours:
 				queue.append(n)
@@ -60,6 +60,6 @@ def scan(start, lang_out):
 	return result
 
 
-website =  scan(BASE_WEBSITE+"/en", "ar|he|ru")
+website =  scan(BASE_WEBSITE+"", "ar|en|ru")
 w = open('output.json', 'w')
 w.write(json.dumps(website))
